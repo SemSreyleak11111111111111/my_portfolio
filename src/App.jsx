@@ -1,7 +1,13 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
-
+import ProjectRow from "./components/ProjectRow";
+import Contact from "./components/Contact";
+import posterDesign from "./data/posterDesign";
+import logoDesign from "./data/logoDesign";
+import motionGraphic from "./data/motionGraphic";
+import threeDDesign from "./data/threeDDesign";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -9,8 +15,32 @@ function App() {
       <Hero />
       <Skills />
 
-      <main className="min-h-screen bg-slate-900">
-      </main>
+      <ProjectRow
+        id="poster"
+        title="Poster Design"
+        data={posterDesign}
+      />
+
+      <ProjectRow
+        id="logo"
+        title="Logo Design"
+        data={logoDesign}
+      />
+
+      <ProjectRow
+        id="3d"
+        title="3D Design"
+        data={threeDDesign}
+      />
+
+      <ProjectRow
+        id="motion"
+        title="Motion Graphic"
+        data={motionGraphic}
+      />
+
+      <Contact />
+      <Footer />
     </>
   );
 }
