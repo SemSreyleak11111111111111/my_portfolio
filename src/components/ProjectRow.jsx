@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const ProjectRow = ({ title, data, id }) => {
+const ProjectRow = ({  data, id }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
@@ -22,9 +22,21 @@ const ProjectRow = ({ title, data, id }) => {
     <>
       <section id={id} className="py-24 bg-black text-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-5xl font-bold mb-12">{title}</h2>
+          {/* <h2 className="text-5xl font-bold mb-10">{title}</h2> */}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {/* Horizontal Scroll */}
+          <div
+            className="
+              flex
+              gap-6
+              overflow-x-auto
+              pb-4
+              snap-x
+              snap-mandatory
+              scrollbar-hide
+              scroll-smooth
+            "
+          >
             {data.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -37,23 +49,33 @@ const ProjectRow = ({ title, data, id }) => {
                 }}
                 whileHover={{
                   y: -8,
+                  scale: 1.03,
                 }}
                 onClick={() => setSelectedImage(project)}
-                className="group cursor-pointer overflow-hidden rounded-2xl bg-zinc-900"
+                className="
+                  group
+                  cursor-pointer
+                  rounded-2xl
+                  bg-zinc-900
+                  overflow-hidden
+                  flex-shrink-0
+                  w-[300px]
+                  snap-start
+                "
               >
                 <div className="overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full aspect-[4/5] object-cover transition duration-500 group-hover:scale-110"
+                    className="w-full h-[400px] object-cover transition duration-500 group-hover:scale-110"
                   />
                 </div>
 
-                <div className="p-5">
+                {/* <div className="p-5">
                   <h3 className="text-lg font-semibold">
                     {project.title}
                   </h3>
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </div>

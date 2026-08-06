@@ -38,6 +38,7 @@ const contacts = [
     icon: <FaPinterestP />,
     link: "https://pin.it/6iZLsNEmD",
   },
+  
 ];
 
 const Contact = () => {
