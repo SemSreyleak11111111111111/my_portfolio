@@ -21,7 +21,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="uppercase tracking-[6px] text-gray-400 mb-4">
-            Hello, I'm
+           Work With
           </p>
 
           <h1 className="text-6xl lg:text-7xl font-black leading-tight">
