@@ -12,7 +12,9 @@ function App() {
   return (
     <>
       <Navbar />
+
       <Hero />
+
       <Skills />
 
       <ProjectRow
@@ -20,7 +22,11 @@ function App() {
         title="Poster Design"
         data={posterDesign}
       />
-
+  <ProjectRow
+        id="motion"
+        title="Motion Graphic"
+        data={motionGraphic}
+      />
       <ProjectRow
         id="logo"
         title="Logo Design"
@@ -33,13 +39,10 @@ function App() {
         data={threeDDesign}
       />
 
-      <ProjectRow
-        id="motion"
-        title="Motion Graphic"
-        data={motionGraphic}
-      />
+    
 
       <Contact />
+
       <Footer />
     </>
   );
