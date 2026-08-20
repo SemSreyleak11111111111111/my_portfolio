@@ -75,8 +75,9 @@ const posterDesign = [
     id: 13,
     title: "Milk Tea",
     image:
-      "https://i.pinimg.com/736x/ee/05/f9/ee05f92d9a378919b4068e6c84a394bd.jpg",
+      "https://i.pinimg.com/736x/88/09/0d/88090dbb15d0340156a891b24ed90f2e.jpg",
   },
+  
 ];
 
 export default posterDesign;
