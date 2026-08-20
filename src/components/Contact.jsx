@@ -5,6 +5,7 @@ import {
   FaTelegramPlane,
   FaPinterestP,
   FaTiktok,
+  FaGithub,
 } from "react-icons/fa";
 
 const contacts = [
@@ -38,6 +39,12 @@ const contacts = [
     icon: <FaPinterestP />,
     link: "https://pin.it/6iZLsNEmD",
   },
+  {
+  name: "GitHub",
+  value: "SemSreyleak11111111111111",
+  icon: <FaGithub />,
+  link: "https://github.com/SemSreyleak11111111111111",
+},
   
 ];
 

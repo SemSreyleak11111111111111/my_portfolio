@@ -33,11 +33,11 @@ function App() {
         data={logoDesign}
       />
 
-      <ProjectRow
+      {/* <ProjectRow
         id="3d"
         title="3D Design"
         data={threeDDesign}
-      />
+      /> */}
 
     
 
