@@ -102,27 +102,140 @@ const Hero = () => {
 
             {/* Name */}
 
-            <div className="overflow-hidden">
-              <motion.h1
-                variants={{
-                  hidden: {
-                    y: 120,
-                    opacity: 0,
-                  },
-                  visible: {
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      duration: 1,
-                      ease: [0.16, 1, 0.3, 1],
-                    },
-                  },
-                }}
-                className="text-7xl md:text-8xl lg:text-[110px] font-black leading-[0.8] tracking-[-6px]"
-              >
-                Cattttt
-              </motion.h1>
-            </div>
+          {/* ================= ANIME NAME ================= */}
+
+<div className="relative overflow-hidden py-3">
+
+  {/* Glow behind name */}
+  <motion.div
+    animate={{
+      opacity: [0.1, 0.4, 0.1],
+      scale: [0.9, 1.15, 0.9],
+    }}
+    transition={{
+      duration: 3,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="absolute inset-0 bg-white/10 blur-3xl"
+  />
+
+  {/* Anime speed lines */}
+  <motion.div
+    initial={{ x: "-120%" }}
+    animate={{ x: "120%" }}
+    transition={{
+      duration: 1.2,
+      repeat: Infinity,
+      repeatDelay: 4,
+      ease: "easeInOut",
+    }}
+    className="absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-white to-transparent opacity-40"
+  />
+
+  {/* Main Name */}
+  <motion.h1
+    variants={{
+      hidden: {
+        y: 120,
+        opacity: 0,
+        scale: 0.8,
+      },
+      visible: {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        transition: {
+          duration: 1,
+          ease: [0.16, 1, 0.3, 1],
+        },
+      },
+    }}
+    animate={{
+      y: [0, -5, 0],
+    }}
+    transition={{
+      y: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    }}
+    className="
+      relative z-10
+      text-7xl md:text-8xl lg:text-[110px]
+      font-black
+      leading-[0.8]
+      tracking-[-6px]
+      select-none
+    "
+  >
+    Cattttt
+  </motion.h1>
+
+  {/* Anime Flicker Layer */}
+  <motion.div
+    animate={{
+      opacity: [0, 0.8, 0, 0.5, 0, 0.8, 0],
+      x: [0, 3, -2, 4, -3, 0],
+    }}
+    transition={{
+      duration: 2.5,
+      repeat: Infinity,
+      repeatDelay: 2,
+      ease: "linear",
+    }}
+    className="
+      absolute
+      inset-0
+      z-20
+      pointer-events-none
+      text-7xl md:text-8xl lg:text-[110px]
+      font-black
+      leading-[0.8]
+      tracking-[-6px]
+      text-white/30
+      mix-blend-screen
+    "
+  >
+    Cattttt
+  </motion.div>
+
+  {/* Small anime particles */}
+  <motion.span
+    animate={{
+      y: [20, -20, 20],
+      x: [0, 8, 0],
+      opacity: [0, 1, 0],
+    }}
+    transition={{
+      duration: 2.5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="absolute left-[10%] top-0 text-white text-xl"
+  >
+    ✦
+  </motion.span>
+
+  <motion.span
+    animate={{
+      y: [-10, 20, -10],
+      x: [0, -10, 0],
+      opacity: [0, 1, 0],
+    }}
+    transition={{
+      duration: 3,
+      repeat: Infinity,
+      delay: 1,
+      ease: "easeInOut",
+    }}
+    className="absolute right-[15%] bottom-0 text-white/60 text-sm"
+  >
+    ✦
+  </motion.span>
+
+</div>
 
             {/* Animated Line */}
 
