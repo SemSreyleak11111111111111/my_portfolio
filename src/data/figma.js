@@ -1,5 +1,6 @@
 import apartment from "../assets/figma/apartment.jpg";
 import foodpanda from "../assets/figma/foodpanda.jpg";
+import app from "../assets/figma/app.jpg";
 
 const figma = [
   {
@@ -9,6 +10,10 @@ const figma = [
   {
     title: "Figma Project 2",
     image: foodpanda,
+  },
+  {
+    title: "Figma Project 3",
+    image: app,
   },
 ];
 
