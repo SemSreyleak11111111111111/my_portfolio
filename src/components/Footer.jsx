@@ -22,15 +22,15 @@ const Footer = () => {
 
           {/* Center */}
           <div className="text-center text-zinc-500 text-sm">
-            © {year} Cattttt. All rights reserved.
+           Thank You For Your Time
           </div>
 
           {/* Right */}
-          <div className="flex items-center gap-2 text-zinc-500 text-sm">
+          {/* <div className="flex items-center gap-2 text-zinc-500 text-sm">
             Made with
             <FaHeart className="text-white animate-pulse" />
             using React & Tailwind CSS
-          </div>
+          </div> */}
 
         </div>
 
