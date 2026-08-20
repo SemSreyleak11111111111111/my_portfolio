@@ -8,6 +8,8 @@ import logoDesign from "./data/logoDesign";
 import motionGraphic from "./data/motionGraphic";
 import threeDDesign from "./data/threeDDesign";
 import Footer from "./components/Footer";
+import figma from "./data/figma";
+
 function App() {
   return (
     <>
@@ -32,15 +34,11 @@ function App() {
         title="Logo Design"
         data={logoDesign}
       />
-
-      {/* <ProjectRow
-        id="3d"
-        title="3D Design"
-        data={threeDDesign}
-      /> */}
-
-    
-
+  <ProjectRow
+        id="figma"
+        title="UX/UI Design"
+        data={figma}
+      />
       <Contact />
 
       <Footer />
