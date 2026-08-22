@@ -9,7 +9,7 @@ import motionGraphic from "./data/motionGraphic";
 import threeDDesign from "./data/threeDDesign";
 import Footer from "./components/Footer";
 import figma from "./data/figma";
-
+import stickerDesign from "./data/stickerDesign";
 function App() {
   return (
     <>
@@ -39,6 +39,11 @@ function App() {
         title="UX/UI Design"
         data={figma}
       />
+      <ProjectRow
+  id="sticker"
+  title="Sticker Design"
+  data={stickerDesign}
+/>
       <Contact />
 
       <Footer />

@@ -4,7 +4,7 @@ const logoDesign = [
     id: 1,
     title: "Coffee Logo",
     image:
-      "https://i.pinimg.com/736x/a9/93/16/a9931631060129bf6e9918e05345a23a.jpg",
+      "https://i.pinimg.com/736x/5d/dc/09/5ddc095ab4ed9242d88a22812c91a9d2.jpg",
   },
    {
     id: 2,
