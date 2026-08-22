@@ -19,6 +19,11 @@ const stickerDesign = [
     title: "Sticker Design 4",
     image: "https://i.pinimg.com/736x/f4/74/7a/f4747a78a1990b8bc8b62db55bd46cc3.jpg",
   },
+   {
+    id: 4,
+    title: "Sticker Design 4",
+    image: "https://i.pinimg.com/736x/11/b5/7d/11b57d806b4a02ed070ae17841aeb54d.jpg",
+  },
 ];
 
 export default stickerDesign;
