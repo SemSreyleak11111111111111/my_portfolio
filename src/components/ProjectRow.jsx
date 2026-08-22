@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ProjectRow = ({ title, data, id }) => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const scrollRef = useRef(null);
 
-  // Close popup with Escape
+  // =========================
+  // CLOSE POPUP WITH ESCAPE
+  // =========================
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
@@ -16,6 +19,55 @@ const ProjectRow = ({ title, data, id }) => {
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  // =========================
+  // AUTO SCROLL
+  // =========================
+  useEffect(() => {
+    const container = scrollRef.current;
+
+    if (!container) return;
+
+    let animationFrame;
+    let isPaused = false;
+
+    const speed = 0.5; // Change this to make scrolling faster/slower
+
+    const scroll = () => {
+      if (!isPaused) {
+        container.scrollLeft += speed;
+
+        // Reset to beginning when reaching the end
+        if (
+          container.scrollLeft + container.clientWidth >=
+          container.scrollWidth - 1
+        ) {
+          container.scrollLeft = 0;
+        }
+      }
+
+      animationFrame = requestAnimationFrame(scroll);
+    };
+
+    const handleMouseEnter = () => {
+      isPaused = true;
+    };
+
+    const handleMouseLeave = () => {
+      isPaused = false;
+    };
+
+    container.addEventListener("mouseenter", handleMouseEnter);
+    container.addEventListener("mouseleave", handleMouseLeave);
+
+    animationFrame = requestAnimationFrame(scroll);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      container.removeEventListener("mouseenter", handleMouseEnter);
+      container.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
@@ -40,12 +92,14 @@ const ProjectRow = ({ title, data, id }) => {
 
           {/* HORIZONTAL PROJECT ROW */}
           <div
+            ref={scrollRef}
             className="
               flex
               gap-6
               overflow-x-auto
               pb-6
               scrollbar-hide
+              cursor-grab
             "
           >
             {data.map((project, index) => (
@@ -66,29 +120,26 @@ const ProjectRow = ({ title, data, id }) => {
                 className="
                   group
                   flex-shrink-0
-                  w-[280px]
-                  md:w-[300px]
-                  lg:w-[320px]
                   cursor-pointer
                   overflow-hidden
                   rounded-2xl
                   bg-zinc-900
                 "
               >
-                <div className="overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="
-                      w-full
-                      aspect-[4/5]
-                      object-cover
-                      transition-transform
-                      duration-500
-                      group-hover:scale-110
-                    "
-                  />
-                </div>
+                {/* FIXED HEIGHT / AUTO WIDTH */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="
+                    h-[400px]
+                    w-auto
+                    block
+                    object-contain
+                    transition-transform
+                    duration-500
+                    group-hover:scale-105
+                  "
+                />
               </motion.div>
             ))}
           </div>
@@ -96,7 +147,9 @@ const ProjectRow = ({ title, data, id }) => {
         </div>
       </section>
 
-      {/* IMAGE POPUP */}
+      {/* =========================
+          IMAGE POPUP
+      ========================= */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
