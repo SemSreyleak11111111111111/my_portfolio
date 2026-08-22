@@ -10,6 +10,7 @@ import threeDDesign from "./data/threeDDesign";
 import Footer from "./components/Footer";
 import figma from "./data/figma";
 import stickerDesign from "./data/stickerDesign";
+import brochureFlyer from "./data/brochureFlyer";
 function App() {
   return (
     <>
@@ -24,7 +25,7 @@ function App() {
         title="Poster Design"
         data={posterDesign}
       />
-  <ProjectRow
+      <ProjectRow
         id="motion"
         title="Motion Graphic"
         data={motionGraphic}
@@ -34,16 +35,21 @@ function App() {
         title="Logo Design"
         data={logoDesign}
       />
-  <ProjectRow
+      <ProjectRow
         id="figma"
         title="UX/UI Design"
         data={figma}
       />
       <ProjectRow
-  id="sticker"
-  title="Sticker Design"
-  data={stickerDesign}
-/>
+        id="sticker"
+        title="Sticker Design"
+        data={stickerDesign}
+      />
+      <ProjectRow
+        id="brochure-flyer"
+        title="Brochure & Flyer"
+        data={brochureFlyer}
+      />
       <Contact />
 
       <Footer />
